@@ -88,13 +88,13 @@ polimorfismo, está no [`PASSO_A_PASSO.md`](./PASSO_A_PASSO.md).
 Escolha a opção mais conveniente — todas produzem exatamente a mesma
 saída, pois usam o mesmo `main.kt`.
 
-### Opção 1 — Kotlin Playground (zero instalação)
+### Opção 1 - Kotlin Playground (zero instalação)
 
 1. Acesse [play.kotlinlang.org](https://play.kotlinlang.org/).
 2. Cole o conteúdo de [`main.kt`](./main.kt).
 3. Clique em **Run**.
 
-### Opção 2 — Terminal (kotlinc)
+### Opção 2 - Terminal (kotlinc)
 
 ```bash
 # Compilar
@@ -104,7 +104,7 @@ kotlinc main.kt -include-runtime -d bytebank.jar
 java -jar bytebank.jar
 ```
 
-### Opção 3 — IntelliJ IDEA / Android Studio
+### Opção 3 - IntelliJ IDEA / Android Studio
 
 Abra `main.kt` no editor e clique no ícone de "play" ▶️ ao lado de
 `fun main()`, ou use `Run 'MainKt'`.
@@ -171,13 +171,12 @@ Rendimento de R$5.5 aplicado.
 ```
 
 Repare como o **mesmo método** `aplicarTaxaMensal()` produz efeitos
-opostos — cobrança na conta corrente, rendimento na poupança — sem
+opostos de cobrança na conta corrente e rendimento na poupança, sem
 nenhum `if` verificando o tipo da conta. Isso é polimorfismo na prática.
 
 ## 📱 Visualizando no Android Studio
 
-Este é um projeto de **console**, sem interface gráfica — é assim que ele
-deve ser entregue e avaliado (`main.kt`). Ainda assim, o repositório
+Este é um projeto de **console**, sem interface gráfica, conforme solicitação a ser entregue e avaliado (`main.kt`). Ainda assim, o repositório
 inclui uma tela Android opcional (`MainActivity.kt`) só para facilitar a
 visualização de quem está desenvolvendo dentro do Android Studio, exibindo
 a mesma saída do console dentro do app:
@@ -218,22 +217,9 @@ bytebank_evolution/
 
 | Pilar             | Como aparece no projeto                                                                 |
 |--------------------|------------------------------------------------------------------------------------------|
-| **Abstração**      | `ContaBancaria` é `abstract` — define o que toda conta faz, sem dizer como cada uma faz |
+| **Abstração**      | `ContaBancaria` é `abstract` - define o que toda conta faz, sem dizer como cada uma faz |
 | **Encapsulamento** | `saldo` é `private`; só é alterado através de métodos que validam as regras de negócio  |
 | **Herança**        | `ContaCorrente` e `ContaPoupanca` herdam depósito, transferência, saldo e histórico     |
 | **Polimorfismo**   | `aplicarTaxaMensal()` e `exibirDados()` se comportam de forma diferente por subclasse   |
-
-## 📚 Documentação de estudo
-
-O arquivo [`PASSO_A_PASSO.md`](./PASSO_A_PASSO.md) traz:
-
-- o diagrama completo da arquitetura, explicado em detalhes;
-- a explicação de como cada requisito do PDF foi atendido;
-- os quatro pilares de POO aplicados especificamente a este código;
-- um roteiro de **perguntas e respostas prontas** para a defesa
-  presencial (ex.: *"Por que usar herança aqui?"*, *"Como o saldo é
-  protegido contra alterações indevidas?"*).
-
----
 
 <p align="center"><sub>Projeto acadêmico — Programação Orientada a Objetos em Kotlin.</sub></p>
